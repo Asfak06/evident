@@ -23,4 +23,4 @@
 </ul>
 </p>
 
-<p>API endppints can be found in routes/api.php</p>
+<p>API endpoints can be found in routes/api.php</p>
