@@ -1,5 +1,7 @@
 <p>The app is hosted here : <a href="http://evident-bd.herokuapp.com/">click</a> </p>
 
+<p>API endppints can be found in routes/api.php</p>
+
 <p>To run the app locally from docker:
 <ul>
 	<li>clone the app</li>
@@ -20,3 +22,5 @@
 	<li>run php artisan serve</li>
 </ul>
 </p>
+
+<p>API endppints can be found in routes/api.php</p>
