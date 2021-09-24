@@ -8,16 +8,16 @@
 	<li>cd to app root</li>
 	<li>run composer-install</li>
 	<li>run docker-compose build</li>
-	<li>run docker-compose up-d</li>
+	<li>run docker-compose up -d</li>
 </ul>
 </p>
 
 <p>To run the app locally , traditional way:
 <ul>
 	<li>clone the app</li>
-	<li>cd to app rootrun composer-install</li>
+	<li>cd to app root</li>
 	<li>run composer-install</li>
-	<li>edit databse credential in .env</li>
+	<li>edit database credential in .env</li>
 	<li>run php artisan migrate</li>
 	<li>run php artisan serve</li>
 </ul>
