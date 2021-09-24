@@ -6,7 +6,7 @@
 <ul>
 	<li>clone the app</li>
 	<li>cd to app root</li>
-	<li>run composer-install</li>
+	<li>run composer install</li>
 	<li>run docker-compose build</li>
 	<li>run docker-compose up -d</li>
 </ul>
@@ -16,7 +16,7 @@
 <ul>
 	<li>clone the app</li>
 	<li>cd to app root</li>
-	<li>run composer-install</li>
+	<li>run composer install</li>
 	<li>edit database credential in .env</li>
 	<li>run php artisan migrate</li>
 	<li>run php artisan serve</li>
