@@ -26,13 +26,13 @@
                 <div class="card-header bg-secondary text-center text-light">{{ __('Khoj the search') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" id="inputform">
+                    <form  id="inputform">
                         @csrf
                         <input type="hidden" name="id" class="form-control form-control-lg is-valid"  value="{{Auth::id()}}" >
                         <div class="form-group mb-4">
                             <div>
                                 <label for="validationServer01">input values : </label>
-                                <input type="text" name="inputstring" class="form-control form-control-lg "  value="" >
+                                <input type="text" id="string" name="inputstring" class="form-control form-control-lg "  value="" >
                                 <label for="validationServer01">Search Value : </label>
                                 <input type="text" name="search" class="form-control form-control-lg "  value="" >
                             </div>                                               
@@ -59,29 +59,37 @@ jQuery(document).ready(function(){
         });
 
         $("#inputform").submit(function(e){
-            e.preventDefault();    
+            e.preventDefault();   
+
                 $.ajax({
-                type:'POST',
-                url:'{{route("input-values")}}',
-                data:$(this).serialize(),
-                success:function(data){
-                    if(data.success){
-                        var html="result : "+data.request;                    
-                        $("#result").show();
-                        if(data.request == true){
-                          $("#result").removeClass("text-danger border border-danger");                            
-                          $("#result").addClass("text-success border border-success");                            
-                        }else{
-                            $("#result").removeClass("text-success border border-success");
+                    type:'POST',
+                    url:'{{route("input-values")}}',
+                    data:$(this).serialize(),
+                    success:function(data){
+                        if(data.success){
+                            var html="result : "+data.request;                    
+                            $("#result").show();
+                            if(data.request == true){
+                              $("#result").removeClass("text-danger border border-danger");                            
+                              $("#result").addClass("text-success border border-success");                            
+                            }else{
+                                $("#result").removeClass("text-success border border-success");
+                                $("#result").addClass("text-danger border border-danger");                            
+                            }
+                            $("#result").html(html);
+                            console.log(data.request);
+                        }else if(data.invalid){
+                            var html="wrong input : "+data.invalid;                    
+                            $("#result").show();
                             $("#result").addClass("text-danger border border-danger");                            
+                            $("#result").html(html);
+                        }else{
+                            console.log('error');
                         }
-                        $("#result").html(html);
-                        console.log(data.request);
-                    }else{
-                        console.log('error');
                     }
-                }
-            });
+                });
+
+
         });
 
 });
