@@ -5,7 +5,7 @@
 <p>To run the app locally from docker:
 <ul>
 	<li>clone the app</li>
-	<li>cd to app rootrun composer-install</li>
+	<li>cd to app root, run composer-install</li>
 	<li>run composer-install</li>
 	<li>run docker-compose build</li>
 	<li>run docker-compose up-d</li>
